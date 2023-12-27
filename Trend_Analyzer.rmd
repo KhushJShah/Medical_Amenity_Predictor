@@ -1,0 +1,49 @@
+---
+title: "Trend Analyzer"
+author: "Khush Shah-G23239366"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+<br/>
+This R file comprises of the EDA, and modelling of the dataset US_Accidents. The features of the dataset are:
+<br/>
+1. City: The City with higher severity proportion.<br/>
+2. Street: Respective Streets in the City.<br/>
+3. Severity Proportion: The Cities with higher proportion of severity 3 and 4.(S.P = (SUM(S3+S4))/(SUM(S1+S2+S3+S4))); S= Severity, S.P. = Severity Proportion.<br\>
+4. Amenity: Whether the Amenity near to the accident exists or not.<br/>
+5. Response Time: The average response time of medical services for that city.<br/>
+6. Weight: S.P*R.T; R.T. =Response Time<br/>
+7. New Amenity: Flag1=The streets with Weight above or equal than threshold; Flag0=The streets with Weight less than the threshold of the Weight.<br/>
+```{r}
+# Load necessary libraries
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+df <- read_csv('C:/Users/nupur/computer/Desktop/Intro_DS/DATS6101_Project/US_Accidents.csv')
+```
+```{r}
+
+```
+```{r}
+
+```
+```{r}
+
+```
+```{r}
+
+```
