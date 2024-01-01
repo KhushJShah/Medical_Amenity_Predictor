@@ -1,68 +1,44 @@
-body {
-    font-family: 'Roboto', sans-serif;
+body, html {
+    height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    color: #333;
-}
-
-header, footer {
-    background-color: #f8f8f8;
-    text-align: center;
-    padding: 10px 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
 }
 
 .navbar {
-    background-color: red;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    border-bottom-left-radius: 15px;  /* Curved lower edges */
-    border-bottom-right-radius: 15px; /* Curved lower edges */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+    /* Rest of your navbar styling */
 }
 
-.navbar .logo {
-    color: white;
-    font-size: 30px; /* Increased size of MedLoc logo */
-    font-weight: bold;
-    padding: 10px 0; /* Extra padding for larger logo */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
 }
 
-.navbar ul.nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin: 0 auto; /* Centering the links */
+.map-image {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+    transform-origin: center center;
 }
 
-.navbar ul.nav-links li {
-    padding: 0 15px;
+.location-pointer {
+    position: absolute;
+    width: 20px; /* Size of the clickable area */
+    height: 20px;
+    background-color: red; /* For visibility, replace with your icon */
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.5s ease;
 }
 
-.navbar ul.nav-links li a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-}
-
-main {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column;
-        padding: 0;
-    }
+.location-pointer:hover {
+    transform: scale(2); /* The pointer will grow to twice its size */
 }
