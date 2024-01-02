@@ -1,30 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const mapSections = document.querySelectorAll('.map-section');
-  
-    mapSections.forEach(section => {
-      // Preload street view images for smoother animation
-      const imgTop = new Image();
-      imgTop.src = section.dataset.topView;
-      const imgStreet = new Image();
-      imgStreet.src = section.dataset.streetView;
-  
-      section.style.backgroundImage = `url(${section.dataset.topView})`;
-  
-      section.addEventListener('mouseenter', () => {
-        section.style.backgroundImage = `url(${section.dataset.streetView})`;
+  const coverImages = document.querySelectorAll('#cover > img'); // Select the images within #cover
+
+  coverImages.forEach(img => {
+      img.addEventListener('mouseenter', () => {
+          changeImage(img, img.getAttribute('data-street-view')); // Change to street view
       });
-  
-      section.addEventListener('mouseleave', () => {
-        section.style.backgroundImage = `url(${section.dataset.topView})`;
+
+      img.addEventListener('mouseleave', () => {
+          resetImage(img, img.src); // Reset to original image
       });
-    });
   });
-  
-  function changeImage(element, newImageSrc) {
-    element.querySelector('img').src = newImageSrc;
-  }
-  
-  function resetImage(element, originalImageSrc) {
-    element.querySelector('img').src = originalImageSrc;
-  }
-  
+});
+
+function changeImage(img, newImageSrc) {
+  img.src = newImageSrc;
+}
+
+function resetImage(img, originalImageSrc) {
+  img.src = originalImageSrc.replace('streets', 'map_aligned'); // Reset to top view
+}

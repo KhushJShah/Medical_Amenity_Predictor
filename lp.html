@@ -7,32 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-item" data-section="section1">Home</div>
-        <div class="nav-item" data-section="section2">Location Tracker</div>
-        <div class="nav-item" data-section="section3">Blogs</div>
-        <div class="nav-item" data-section="section4">About Us</div>
-    </nav>
-
-    
-      
-      <div class="map-container">
-        <div class="map-section top-right" onclick="changeImage(this, 'streetsq1.png')" onmouseleave="resetImage(this, 'map_aligned_q1.png')">
-          <img src="map_aligned_q1.png" alt="Top View 1">
-        </div>
-        <div class="map-section top-left" onclick="changeImage(this, 'streetsq2.png')" onmouseleave="resetImage(this, 'map_alignedq2.png')">
-          <img src="map_alignedq2.png" alt="Top View 2">
-        </div>
-        <div class="map-section bottom-right" onclick="changeImage(this, 'streetsq3.png')" onmouseleave="resetImage(this, 'map_alignedq3.png')">
-          <img src="map_alignedq3.png" alt="Top View 3">
-        </div>
-        <div class="map-section bottom-left" onclick="changeImage(this, 'streetsq4.png')" onmouseleave="resetImage(this, 'map_alignedq4.png')">
-          <img src="map_alignedq4.png" alt="Top View 4">
-        </div>
-      </div>
-      
-
+    <h1 class="title">MedLoc</h1>
+    <div id="cover">
+        <img src="map_alignedq2.png" alt="Top View 2" data-street-view="streetsq2.png">
+        <img src="map_aligned_q1.png" alt="Top View 1" data-street-view="streetsq1.png">
+        <img src="map_alignedq3.png" alt="Top View 3" data-street-view="streetsq3.png">
+        <img src="map_alignedq4.png" alt="Top View 4" data-street-view="streetsq4.png">
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
